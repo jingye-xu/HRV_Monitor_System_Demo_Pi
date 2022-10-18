@@ -47,6 +47,8 @@ This is a general LCD display Module, IPS screen, 2inch diagonal, 240×320 resol
 
 ## Connections
 
+### Connect display to Pi
+
 | LCD | BCM2835      | Board |
 |-----|--------------|-------|
 | VCC | 3.3V         | 3.3V  |
@@ -57,3 +59,5 @@ This is a general LCD display Module, IPS screen, 2inch diagonal, 240×320 resol
 | DS  | 25           | 22    |
 | RST | 27           | 13    |
 | BL  | 18           | 12    |
+
+<img src="Pictures/connections.jpg" width="600">
