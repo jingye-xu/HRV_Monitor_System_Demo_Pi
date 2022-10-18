@@ -45,3 +45,15 @@ This is a general LCD display Module, IPS screen, 2inch diagonal, 240×320 resol
 
 ### Raspberry Pi 4B
 
+## Connections
+
+| LCD | BCM2835      | Board |
+|-----|--------------|-------|
+| VCC | 3.3V         | 3.3V  |
+| GND | GND          | GND   |
+| DIN | MOSI         | 19    |
+| CLK | SCLK         | 23    |
+| CS  | CE0          | 24    |
+| DS  | 25           | 22    |
+| RST | 27           | 13    |
+| BL  | 18           | 12    |
