@@ -6,6 +6,8 @@ This repository stores the codes of the Pi side for the heart rate variability m
 
 ### Display
 
+![](Pictures/2InchDisplay.jpg)
+
 This is a general LCD display Module, IPS screen, 2inch diagonal, 240×320 resolution, with embedded controller, communicating via SPI interface.
 [Product link](https://www.waveshare.com/2inch-lcd-module.htm)
 
@@ -33,6 +35,7 @@ This is a general LCD display Module, IPS screen, 2inch diagonal, 240×320 resol
 
 #### Dimensions
 
+![](Pictures/displaySize.jpg)
 
 ### PPG Sensor
 
