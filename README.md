@@ -35,6 +35,8 @@ This is a general LCD display Module, IPS screen, 2inch diagonal, 240×320 resol
 
 #### Dimensions
 
+<img src="Pictures/displaySize.jpg" width="200">
+
 ![](Pictures/displaySize.jpg)
 
 ### PPG Sensor
