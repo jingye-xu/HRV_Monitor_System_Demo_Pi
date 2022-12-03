@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# -*- coding: UTF-8 -*-
 import os
 import sys 
 import time
@@ -84,7 +83,7 @@ try:
     # Clear display.
     disp.clear()
 
-    uart = serial.Serial("/dev/ttyS0", 4800)
+    uart = serial.Serial("/dev/ttyACM1", 4800)
     power_mode = None
     HR = None
     HRV = None
@@ -95,7 +94,7 @@ try:
         # Create blank image for drawing.
         image1 = Image.new("RGB", (disp.height, disp.width ), "BLACK")
         draw = ImageDraw.Draw(image1)
-        Font = ImageFont.truetype("/times-new-roman.ttf",20)
+        Font = ImageFont.truetype("./times-new-roman.ttf",20)
         
         # check uart
         if uart.in_waiting >= 10:
@@ -139,9 +138,6 @@ try:
         image1 = image1.rotate(180)
         disp.ShowImage(image1)
         time.sleep(0.05)
-
-except IOError as e:
-    logging.info(e)    
 except KeyboardInterrupt:
     image1 = Image.new("RGB", (disp.height, disp.width ), "BLACK")
     draw = ImageDraw.Draw(image1)
