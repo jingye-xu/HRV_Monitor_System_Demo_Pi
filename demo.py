@@ -9,6 +9,7 @@ sys.path.append("..")
 import LCD_2inch
 from PIL import Image,ImageDraw,ImageFont
 import numpy as np
+from serialport import serialPort
 
 # plot heart
 def heart(xy, size, draw):
@@ -83,7 +84,7 @@ try:
     # Clear display.
     disp.clear()
 
-    uart = serial.Serial("/dev/ttyACM1", 4800)
+    uart = serial.Serial(serialPort, 4800)
     power_mode = None
     HR = None
     HRV = None
