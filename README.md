@@ -158,5 +158,9 @@ Find the serial port and modify demo.py accordingly:
 ```bash
 ls /dev | grep tty
 ```
+Change the port variable accordingly:
+```bash
+nano serialport.py
+```
 
 ### 6. Setup autorun after booting (optional)
