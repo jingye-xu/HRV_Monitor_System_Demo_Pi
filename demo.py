@@ -95,7 +95,7 @@ try:
         # Create blank image for drawing.
         image1 = Image.new("RGB", (disp.height, disp.width ), "BLACK")
         draw = ImageDraw.Draw(image1)
-        Font = ImageFont.truetype("./times-new-roman.ttf",20)
+        Font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeSans.ttf",20)
         
         # check uart
         if uart.in_waiting >= 10:
