@@ -70,11 +70,93 @@ This is a general LCD display Module, IPS screen, 2inch diagonal, 240×320 resol
 
 ## Usage
 
-Original document: [2inch_LCD_Module Workins with Raspberry Pi](https://www.waveshare.com/wiki/2inch_LCD_Module#Working_with_Raspberry_Pi)
+Original document: [2inch_LCD_Module Works with Raspberry Pi](https://www.waveshare.com/wiki/2inch_LCD_Module#Working_with_Raspberry_Pi)
 
 ### 1. Enable SPI interface
+
+Open the terminal:
+
+```bash
+sudo raspi-config
+Choose Interfacing Options -> SPI -> Yes  to enable SPI interface
+```
+
+Reboot to enable the SPI interface:
+
+```bash
+sudo reboot
+```
+
 ### 2. Install libraries
-### 3. Try display official examples (Optional)
+
+Install BCM2835 libraries through terminal
+
+```bash
+wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.71.tar.gz
+tar zxvf bcm2835-1.71.tar.gz
+cd bcm2835-1.71/
+sudo ./configure && sudo make && sudo make check && sudo make install
+```
+
+Install wiringPi libraries (choose 1 of following):
+
+(Option 1) For Bullseye branch system(newest Raspberry Pi 64bit Ubuntu OS):
+```bash
+git clone https://github.com/WiringPi/WiringPi
+cd WiringPi
+./build
+gpio -v
+# Run gpio -v and version 2.60 will appear. If it does not appear, it means that there is an installation error
+```
+
+(Option 2) For older branch systems:
+```bash
+#Open the Raspberry Pi terminal and run the following command
+sudo apt-get install wiringpi
+#For Raspberry Pi systems after May 2019 (earlier than before, you may not need to execute), you may need to upgrade:
+wget https://project-downloads.drogon.net/wiringpi-latest.deb
+sudo dpkg -i wiringpi-latest.deb
+gpio -v
+# Run gpio -v and version 2.52 will appear. If it does not appear, the installation is wrong
+```
+
+### 3. Try display official examples (optional)
+
+Download examples:
+```bash
+sudo apt-get install unzip -y
+sudo wget https://www.waveshare.com/w/upload/8/8d/LCD_Module_RPI_code.zip
+sudo unzip ./LCD_Module_RPI_code.zip 
+cd LCD_Module_RPI_code/RaspberryPi/
+```
+
+Enter the python examples folder:
+```bash
+cd python/examples
+```
+
+Try examples under `python/examples/` folder:
+```bash
+# python2
+sudo python 2inch_LCD_test.py
+
+# or python3
+sudo python3 2inch_LCD_test.py
+```
+
 ### 4. Download our code and install required libraries
+
+```bash
+git clone https://github.com/jingye-xu/HRV_Monitor_System_Demo_Pi.git
+cd HRV_Monitor_System_Demo_Pi
+python3 -m pip install -r requirements.txt
+```
+
 ### 5. Modify serial port and run
-### 6. Setup autorun after booting
+
+Find the serial port and modify demo.py accordingly:
+```bash
+ls /dev | grep tty
+```
+
+### 6. Setup autorun after booting (optional)
