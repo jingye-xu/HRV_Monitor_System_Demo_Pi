@@ -70,4 +70,11 @@ This is a general LCD display Module, IPS screen, 2inch diagonal, 240×320 resol
 
 ## Usage
 
-Refer to this: [2inch_LCD_Module Workins with Raspberry Pi](https://www.waveshare.com/wiki/2inch_LCD_Module#Working_with_Raspberry_Pi)
+Original document: [2inch_LCD_Module Workins with Raspberry Pi](https://www.waveshare.com/wiki/2inch_LCD_Module#Working_with_Raspberry_Pi)
+
+### 1. Enable SPI interface
+### 2. Install libraries
+### 3. Try display official examples (Optional)
+### 4. Download our code and install required libraries
+### 5. Modify serial port and run
+### 6. Setup autorun after booting
