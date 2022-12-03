@@ -61,3 +61,7 @@ This is a general LCD display Module, IPS screen, 2inch diagonal, 240×320 resol
 | BL  | 18           | 12    |
 
 <img src="Pictures/connections.jpg" width="600">
+
+## Usage
+
+Refer to this: [2inch_LCD_Module Workins with Raspberry Pi](https://www.waveshare.com/wiki/2inch_LCD_Module#Working_with_Raspberry_Pi)
