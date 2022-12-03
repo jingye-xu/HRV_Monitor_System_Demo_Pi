@@ -171,7 +171,7 @@ nano serialport.py
 sudo touch /lib/systemd/system/display_demo.service
 ```
 Add following into the file.
-Note: change {your path} to your path.
+**Note**: change {your path} to your path.
 ```
 [Unit]
 Description=display demo
