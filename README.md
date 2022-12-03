@@ -158,5 +158,39 @@ Find the serial port and modify demo.py accordingly:
 ```bash
 ls /dev | grep tty
 ```
+Change the port variable accordingly:
+```bash
+nano serialport.py
+```
 
 ### 6. Setup autorun after booting (optional)
+
+#### 1). Create service file
+
+```bash
+sudo touch /lib/systemd/system/display_demo.service
+```
+Add following into the file.
+Note: change {your path} to your path.
+```
+[Unit]
+Description=display demo
+After=multi-user.target
+[Service]
+Type=idle
+ExecStart=python3 {your path}/demo.py
+[Install]
+WantedBy=multi-user.target
+```
+
+#### 2). Reload daemon
+
+```bash
+sudo systemctl daemon-reload
+```
+
+#### 3). Enable and start service
+
+```bash
+sudo systemctl enable display_demo.service && sudo systemctl start display_demo.service
+```
