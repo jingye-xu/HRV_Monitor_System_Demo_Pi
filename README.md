@@ -2,7 +2,13 @@
 
 This repository stores the codes of the Pi side for the heart rate variability monitoring system demo.
 
-## Parts
+## Content
+
+[Hardware introduction](README.md#hardware)
+
+[Usage](README.md#usage)
+
+## Hardware
 
 ### Display
 
