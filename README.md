@@ -165,7 +165,7 @@ nano serialport.py
 
 ### 6. Setup autorun after booting (optional)
 
-#### a. Create service file
+#### 1). Create service file
 
 ```bash
 sudo touch display_demo.service
@@ -183,13 +183,13 @@ ExecStart=python3 {your path}/demo.py
 WantedBy=multi-user.target
 ```
 
-#### b. Reload daemon
+#### 2). Reload daemon
 
 ```bash
 sudo systemctl daemon-reload
 ```
 
-#### c. Enable and start service
+#### 3). Enable and start service
 
 ```bash
 sudo systemctl enable display_demo.service && sudo systemctl start display_demo.service
