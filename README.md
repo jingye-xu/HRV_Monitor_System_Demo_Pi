@@ -168,7 +168,7 @@ nano serialport.py
 #### 1). Create service file
 
 ```bash
-sudo touch display_demo.service
+sudo touch /lib/systemd/system/display_demo.service
 ```
 Add following into the file.
 Note: change {your path} to your path.
