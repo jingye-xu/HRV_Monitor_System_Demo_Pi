@@ -1,1 +1,1 @@
-serialPort = "/dev/ttyACM1"
+serialPort = "/dev/ttyS0"

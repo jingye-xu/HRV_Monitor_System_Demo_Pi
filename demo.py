@@ -83,13 +83,15 @@ try:
     disp.Init()
     # Clear display.
     disp.clear()
-
-    uart = serial.Serial(serialPort, 4800)
+    uart = serial.Serial(serialPort, 9600)
     power_mode = None
     HR = None
     HRV = None
     Time_HR = None
     Time_HRV = None
+
+    time.sleep(1)
+    uart.read_all()
 
     while True:
         # Create blank image for drawing.
@@ -97,20 +99,22 @@ try:
         draw = ImageDraw.Draw(image1)
         Font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeSans.ttf",20)
         
-        # check uart
-        if uart.in_waiting >= 10:
-            uart_data = uart.read(10)
-            uart_data = uart_data.decode("utf-8", errors="ignore")
+        if uart.in_waiting:
+            uart_data = uart.readline()
+            uart_data = uart_data[:-1].decode("utf-8", errors="ignore")
+            print(uart_data)
             if uart_data[0] == "s":
                 power_mode = "start"
             elif uart_data[0] == "h":
-                HR = uart_data[2:]
+                HR = float(uart_data[1:])
             elif uart_data[0] == "v":
-                HRV = uart_data[2:]
+                HRV = float(uart_data[1:])
             elif uart_data[0] == "t":
-                Time_HR = uart_data[2:]
+                Time_HR = float(uart_data[1:]) * 0.001
+                power_mode = "start"
             elif uart_data[0] == "i":
-                Time_HRV = uart_data[2:]
+                Time_HRV = float(uart_data[1:]) * 0.001
+                power_mode = "start"
             elif uart_data[0] == "e":
                 power_mode = "end"
                 HR = None
@@ -123,9 +127,9 @@ try:
         draw.text((5, 0), f'{current_time}', fill = "WHITE",font=Font)
         draw.text((5, 30), f'Mode: {power_mode if power_mode else "NA"}', fill = "WHITE",font=Font)
         draw.text((5, 60), f'HR: {HR if HR else "NA"}', fill = "WHITE",font=Font)
-        draw.text((5, 90), f'time for HR: {Time_HR if Time_HR else "NA"}', fill = "WHITE",font=Font)
+        draw.text((5, 90), f'time for HR: {Time_HR if Time_HR else "NA"} s', fill = "WHITE",font=Font)
         draw.text((5, 120), f'HRV: {HRV if HRV else "NA"}', fill = "WHITE",font=Font)
-        draw.text((5, 150), f'time for HRV: {Time_HRV if Time_HRV else "NA"}', fill = "WHITE",font=Font)
+        draw.text((5, 150), f'time for HRV: {Time_HRV if Time_HRV else "NA"} s', fill = "WHITE",font=Font)
         
         
         heart_trace((20, 179), HR, 120, 60, draw, heart_t)
