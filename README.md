@@ -2,7 +2,7 @@
 
 This repository stores the codes of the Pi side for the heart rate variability monitoring system demo.
 
-[HRV monitoring system - MSP430 side](https://github.com/jingye-xu/HRV_Monitor_System_Demo_MSP430/blob/main/README.md)
+[HRV monitoring system demo - MSP430 side](https://github.com/jingye-xu/HRV_Monitor_System_Demo_MSP430/blob/main/README.md)
 
 ## Content
 
